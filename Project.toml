@@ -1,0 +1,5 @@
+[deps]
+GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
+IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+Sunny = "2b4a2ac8-8f8b-43e8-abf4-3cb0c45e8736"
+WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
