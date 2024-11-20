@@ -1,5 +1,12 @@
 [deps]
+AlgebraicNumbers = "e86d093a-a386-599e-b7c7-df0420c8bcba"
+DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
 GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
 IJulia = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
+IntervalArithmetic = "d1acc4aa-44c8-5952-acd4-ba5d80a2a253"
+IntervalBoxes = "43d83c95-ebbb-40ec-8188-24586a1458ed"
+IntervalRootFinding = "d2bf35a9-74e0-55ec-b149-d360ff49b807"
+LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 Sunny = "2b4a2ac8-8f8b-43e8-abf4-3cb0c45e8736"
 WGLMakie = "276b4fcb-3e11-5398-bf8b-a0c2d153d008"
