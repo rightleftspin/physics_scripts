@@ -19,9 +19,9 @@ Jim Martin, Spring 2024
 import numpy as np
 
 # put all your marks here, normalized so that 1.0 is full marks on that component:
-all_marks = {"as":[0.93, 0.92, 0.95, 0.9, 1.0, 0.6, 0.6, 0],
+all_marks = {"as":[0.93, 0.92, 0.95, 0.9, 1.0, 0.6, 0.8, 0],
              "midterm":0.95,
-             "final_exam":0.95
+             "final_exam":0.87
             }
 
 n_problem_sets = 8
