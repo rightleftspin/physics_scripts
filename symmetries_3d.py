@@ -41,13 +41,17 @@ def Tn(n):
 
 
 n = sp.symbols('n')
-L = 17
+L = sp.symbols('L')
 
 coord = np.array([n - (L * (n // L)), 
                   (n // L) - (L * ((n //L) // L)), 
                   ((n // L) // L) - (L * (((n // L) // L) // L)), 
                   1
                   ])
+
+#transform_to_basis = np.array([[0, 1 / 2, 1 / 2, 0], [1/2, 1/2, 0, 0], [1/2, 0, 1/2, 0], [0, 0, 0, 1]]) + np.array([[1, 0, 0, 1/4], [0, 1, 0, 1/4], [0, 0, 1, 1/4], [0, 0, 0, 1]])
+
+#transform_back = np.linalg.inv(np.array([[0, 1 / 2, 1 / 2, 0], [1/2, 1/2, 0, 0], [1/2, 0, 1/2, 0], [0, 0, 0, 1]])) + np.array([[1, 0, 0, -1/4], [0, 1, 0, -1/4], [0, 0, 1, -1/4], [0, 0, 0, 1]]))
 
 translation_left = np.array([[1, 0, 0, L // 2], [0, 1, 0, L // 2], [0, 0, 1, L // 2], [0, 0, 0, 1]])
 translation_right = np.array([[1, 0, 0, -(L // 2)], [0, 1, 0, -(L // 2)], [0, 0, 1, -(L // 2)], [0, 0, 0, 1]])
@@ -129,14 +133,11 @@ full_group = []
 for elem in group:
     full_group.extend(elem)
 
-print(len(full_group))
-
 collapse = np.array([1, L, L ** 2, 0])
+#print("[")
+for i, elem in enumerate(full_group):
+                 if sp.nsimplify(collapse @ translation_left @ elem @ translation_right @ coord, tolerance=1e-10,rational=True) != sp.nsimplify(collapse @ transform_back @ translation_left @ elem @ translation_right @ transform_to_basis @ coord, tolerance=1e-10,rational=True):
+                    print("failed")
+    #print(f"{sp.nsimplify(collapse @ translation_left @ elem @ translation_right @ coord, tolerance=1e-10,rational=True)},")
 
-final = collapse @ translation_left @ ident @ translation_right @ coord
-
-print(final)
-
-#for i in range(L ** 3):
-#    if final.subs(n, i) != i:
-#        print("error")
+#print("]")
